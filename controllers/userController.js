@@ -64,3 +64,6 @@ export const getUserNameAndId = (req,res) => {
     }
 }
 
+export const throwError = (req,res) => {
+    throw new Error("This is a test error");
+}

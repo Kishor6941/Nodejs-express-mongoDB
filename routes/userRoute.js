@@ -1,13 +1,15 @@
 import express from "express"
-import { getUser,createUser, updateUser, deleteUser,getUserNameAndId,getUserById } from "../controllers/userController.js"
+import { getUser,createUser, updateUser, deleteUser,getUserNameAndId,getUserById, throwError } from "../controllers/userController.js"
+import testMiddleware from "../middleware/testMiddleware.js"
 
 const router = express.Router()
 
-router.get('/user',getUser)
+router.get('/user',testMiddleware, getUser)
 router.get('/user/:id',getUserById)
 router.post('/user',createUser)
 router.put('/user/:id',updateUser)
 router.delete('/user/:id',deleteUser)
 router.get('/user/:name/:id',getUserNameAndId)
+router.get('/error',throwError)
 
 export default router;
