@@ -6,6 +6,12 @@ const app = express()
 app.use(express.json());
 app.use('/api',router)
 
+app.use('/public',express.static('public'));
+app.use('/images', express.static('images'));
+
+// Set EJS as templating engine
+app.set('view engine', 'ejs');
+
 // Error handler (must be last)
 app.use(errorHandler)
 

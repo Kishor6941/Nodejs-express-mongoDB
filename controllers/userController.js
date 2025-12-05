@@ -64,6 +64,11 @@ export const getUserNameAndId = (req,res) => {
     }
 }
 
+export const viewEngineTest = (req,res) => {
+    const userName = "Kishor Phawade";
+    res.render('index',{ userName})
+}
+
 export const throwError = (req,res) => {
     throw new Error("This is a test error");
 }
