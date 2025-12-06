@@ -1,5 +1,5 @@
 import express from "express"
-import { getUser,createUser, updateUser, deleteUser,getUserNameAndId,getUserById, throwError, viewEngineTest } from "../controllers/userController.js"
+import { getUser,createUser, updateUser, deleteUser,getUserNameAndId,getUserById, throwError, viewEngineTest, formDataTest } from "../controllers/userController.js"
 import testMiddleware from "../middleware/testMiddleware.js"
 
 const router = express.Router()
@@ -12,5 +12,5 @@ router.delete('/user/:id',deleteUser)
 router.get('/user/:name/:id',getUserNameAndId)
 router.get('/view-engine',viewEngineTest)
 router.get('/error',throwError)
-
+router.get("/form", formDataTest)
 export default router;

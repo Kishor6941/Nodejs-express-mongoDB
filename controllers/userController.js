@@ -69,6 +69,12 @@ export const viewEngineTest = (req,res) => {
     res.render('index',{ userName})
 }
 
+export const formDataTest = (req,res) => {
+    console.log(req.body)
+    const {email,password} = req.body;
+    res.send(`Email: ${email}, Password: ${password}`)
+}
+
 export const throwError = (req,res) => {
     throw new Error("This is a test error");
 }
